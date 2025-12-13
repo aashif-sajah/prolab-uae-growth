@@ -1,14 +1,380 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { ArrowRight, Zap, Palette, ShieldCheck, Clock, Globe, Smartphone, ShoppingBag, Code } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import TrustBadges from "@/components/TrustBadges";
+import AnalyticsDashboard from "@/components/AnalyticsDashboard";
+import ServiceCard from "@/components/ServiceCard";
+import PricingCard from "@/components/PricingCard";
+import TestimonialCard from "@/components/TestimonialCard";
+import StatsSection from "@/components/StatsSection";
+import AnalyticsProof from "@/components/AnalyticsProof";
+import CTASection from "@/components/CTASection";
+import ScrollReveal from "@/components/ScrollReveal";
+import { Helmet } from "react-helmet-async";
 
-const Index = () => {
+const services = [
+  {
+    icon: ShoppingBag,
+    title: "Shopify Store Development",
+    description: "Complete e-commerce stores that convert visitors into customers. Delivered in just 3 days.",
+    features: [
+      "Premium theme setup & customization",
+      "50 winning products included",
+      "Payment gateway integration",
+      "Mobile-first design",
+    ],
+    href: "/shopify",
+    featured: true,
+  },
+  {
+    icon: Globe,
+    title: "Business Websites",
+    description: "Professional websites that establish authority and generate leads for your business.",
+    features: [
+      "Custom design & development",
+      "SEO-optimized structure",
+      "Fast loading speeds",
+      "Lead capture forms",
+    ],
+    href: "/websites",
+  },
+  {
+    icon: Code,
+    title: "Custom Development",
+    description: "Tailored solutions for unique requirements. From apps to complex integrations.",
+    features: [
+      "Custom functionality",
+      "Third-party integrations",
+      "API development",
+      "Ongoing maintenance",
+    ],
+    href: "/contact",
+  },
+];
+
+const packages = [
+  {
+    name: "Starter",
+    price: "799",
+    description: "Perfect for testing the waters",
+    features: [
+      "Shopify store setup",
+      "Free theme installation",
+      "20 products added",
+      "Payment gateway setup",
+      "Basic SEO setup",
+      "7 days support",
+    ],
+  },
+  {
+    name: "Professional",
+    price: "1,199",
+    description: "Most popular choice",
+    features: [
+      "Premium theme setup",
+      "50 high-selling products",
+      "Full payment gateway setup",
+      "Speed optimization",
+      "SEO-ready structure",
+      "30 days support",
+    ],
+    featured: true,
+  },
+  {
+    name: "Premium",
+    price: "1,699",
+    description: "For serious entrepreneurs",
+    features: [
+      "Fully custom Shopify store",
+      "Advanced SEO optimization",
+      "Conversion-optimized layout",
+      "Automation setup",
+      "Priority support",
+      "90 days support",
+    ],
+  },
+];
+
+const testimonials = [
+  {
+    name: "Ahmed Al-Rashid",
+    role: "Founder",
+    company: "Desert Luxe",
+    content: "Prolab delivered my store in exactly 3 days. The quality exceeded my expectations. Already made $15,000 in my first month!",
+    rating: 5,
+  },
+  {
+    name: "Sarah Thompson",
+    role: "CEO",
+    company: "Glow Beauty UAE",
+    content: "The team at Prolab truly understands e-commerce. My conversion rate jumped from 1.2% to 4.1% after they optimized my store.",
+    rating: 5,
+  },
+  {
+    name: "Mohammed Hassan",
+    role: "Owner",
+    company: "TechZone Dubai",
+    content: "Professional, fast, and reliable. They handled everything from setup to product research. Highly recommended!",
+    rating: 5,
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+    <>
+      <Helmet>
+        <title>PROLAB - Dubai's #1 Shopify Development Agency | Store in 3 Days</title>
+        <meta name="description" content="Dubai's trusted Shopify development partner. Get your revenue-ready store in just 3 days. 100+ stores built, 24/7 support, Dubai registered company. Start selling today!" />
+        <meta name="keywords" content="Shopify development Dubai, Shopify store UAE, web development Dubai, Shopify experts UAE, Dubai Shopify agency" />
+        <link rel="canonical" href="https://prolab.ae/" />
+      </Helmet>
 
-export default Index;
+      <Header />
+
+      <main>
+        {/* Hero Section */}
+        <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+          {/* Background Effects */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+          <div className="absolute top-1/4 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
+          <div className="container-custom relative py-20">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <div className="order-2 lg:order-1">
+                <ScrollReveal animation="fade-up">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-primary text-sm font-medium">Dubai's #1 Shopify Partner</span>
+                  </div>
+                </ScrollReveal>
+
+                <ScrollReveal animation="fade-up" delay={100}>
+                  <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+                    We Build Shopify Stores That{" "}
+                    <span className="text-gradient-gold">Actually Make Money</span>
+                  </h1>
+                </ScrollReveal>
+
+                <ScrollReveal animation="fade-up" delay={200}>
+                  <p className="text-xl text-muted-foreground mb-8 max-w-xl">
+                    Dubai-based Shopify experts delivering revenue-ready stores in just{" "}
+                    <span className="text-primary font-semibold">3 days</span>. 
+                    Your store should make money — not just exist.
+                  </p>
+                </ScrollReveal>
+
+                <ScrollReveal animation="fade-up" delay={300}>
+                  <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                    <Link to="/shopify">
+                      <Button className="btn-primary text-lg px-8 py-6 gap-2 w-full sm:w-auto">
+                        Get Your Store in 3 Days
+                        <ArrowRight className="w-5 h-5" />
+                      </Button>
+                    </Link>
+                    <Link to="/contact">
+                      <Button variant="outline" className="btn-secondary text-lg px-8 py-6 w-full sm:w-auto">
+                        Talk to Our Expert
+                      </Button>
+                    </Link>
+                  </div>
+                </ScrollReveal>
+
+                <ScrollReveal animation="fade-up" delay={400}>
+                  <TrustBadges />
+                </ScrollReveal>
+              </div>
+
+              {/* Analytics Dashboard */}
+              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                <ScrollReveal animation="slide-right" delay={500}>
+                  <AnalyticsDashboard />
+                </ScrollReveal>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Analytics Proof Section */}
+        <AnalyticsProof />
+
+        {/* Stats Section */}
+        <StatsSection />
+
+        {/* Services Section */}
+        <section className="section-padding" id="services">
+          <div className="container-custom">
+            <ScrollReveal animation="fade-up">
+              <div className="text-center mb-16">
+                <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Our Services</p>
+                <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
+                  Everything You Need to Sell Online
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  From complete Shopify stores to professional websites, we handle it all.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <ScrollReveal key={service.title} animation="fade-up" delay={index * 100}>
+                  <ServiceCard {...service} />
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Prolab Section */}
+        <section className="section-padding bg-secondary/30">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <ScrollReveal animation="slide-left">
+                <div>
+                  <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Why Choose Prolab</p>
+                  <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
+                    Not Just Another Web Agency
+                  </h2>
+                  <p className="text-xl text-muted-foreground mb-8">
+                    We don't just build stores — we build revenue machines. Every decision we make is focused on one thing: making you money.
+                  </p>
+
+                  <div className="space-y-6">
+                    {[
+                      { icon: Clock, title: "3-Day Delivery", desc: "We move fast because your time is money" },
+                      { icon: ShieldCheck, title: "Dubai Registered", desc: "100% legitimate, no scams, real company" },
+                      { icon: Zap, title: "Conversion Focused", desc: "Every element designed to convert visitors" },
+                      { icon: Smartphone, title: "Mobile-First", desc: "70% of traffic is mobile — we optimize for it" },
+                    ].map((item, index) => (
+                      <div key={item.title} className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <item.icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground text-lg">{item.title}</h3>
+                          <p className="text-muted-foreground">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal animation="slide-right" delay={200}>
+                <div className="glass-card p-8">
+                  <div className="text-center mb-8">
+                    <p className="text-muted-foreground mb-2">What you get when you don't delay:</p>
+                    <h3 className="font-display text-2xl font-bold text-foreground">Your First Sale Within a Week</h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    {[
+                      "Day 1: Strategy & Store Setup",
+                      "Day 2: Products & Payment Integration",
+                      "Day 3: Polish & Launch Ready",
+                      "Day 4+: You're Already Selling",
+                    ].map((step, index) => (
+                      <div key={step} className="flex items-center gap-4">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+                          index === 3 ? "bg-green-500 text-white" : "bg-primary/10 text-primary"
+                        }`}>
+                          {index + 1}
+                        </div>
+                        <p className={`font-medium ${index === 3 ? "text-green-400" : "text-foreground"}`}>
+                          {step}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 p-4 rounded-xl bg-primary/5 border border-primary/20">
+                    <p className="text-center text-muted-foreground text-sm">
+                      <span className="text-primary font-semibold">Every day you delay</span> is lost revenue. Your competitors are already selling.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Packages Preview */}
+        <section className="section-padding" id="pricing">
+          <div className="container-custom">
+            <ScrollReveal animation="fade-up">
+              <div className="text-center mb-16">
+                <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Pricing</p>
+                <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
+                  Simple, Transparent Pricing
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  Choose the package that fits your business. All include our 3-day delivery guarantee.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {packages.map((pkg, index) => (
+                <ScrollReveal key={pkg.name} animation="fade-up" delay={index * 100}>
+                  <PricingCard {...pkg} />
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <ScrollReveal animation="fade-up" delay={400}>
+              <div className="text-center mt-12">
+                <Link to="/pricing" className="text-primary font-semibold hover:underline inline-flex items-center gap-2">
+                  View Full Pricing Details
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="section-padding bg-secondary/30">
+          <div className="container-custom">
+            <ScrollReveal animation="fade-up">
+              <div className="text-center mb-16">
+                <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Client Reviews</p>
+                <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
+                  What Our Clients Say
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  100+ satisfied clients across the UAE trust Prolab with their e-commerce success.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <ScrollReveal key={testimonial.name} animation="fade-up" delay={index * 100}>
+                  <TestimonialCard {...testimonial} />
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <ScrollReveal animation="fade-up" delay={400}>
+              <div className="text-center mt-12">
+                <Link to="/reviews" className="text-primary font-semibold hover:underline inline-flex items-center gap-2">
+                  Read All Reviews
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <CTASection />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
