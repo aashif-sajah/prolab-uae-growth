@@ -1,27 +1,20 @@
-import { TrendingUp, DollarSign, ShoppingCart, Percent } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
-const analyticsData = [
+const analyticsImages = [
   {
-    store: "Fashion Boutique",
-    totalSales: "$127,892",
-    orders: "2,847",
-    conversion: "4.8%",
-    growth: "+156%",
+    image: "https://i.postimg.cc/R30BMq11/download.jpg",
+    title: "Fashion Store Analytics",
+    subtitle: "Real Shopify dashboard results",
   },
   {
-    store: "Tech Gadgets",
-    totalSales: "$89,431",
-    orders: "1,562",
-    conversion: "3.9%",
-    growth: "+89%",
+    image: "https://i.postimg.cc/LqspHhkB/Shopify-Store-Sales-(1).jpg",
+    title: "Electronics Store Revenue",
+    subtitle: "Proven sales performance",
   },
   {
-    store: "Home & Living",
-    totalSales: "$203,127",
-    orders: "4,231",
-    conversion: "5.2%",
-    growth: "+234%",
+    image: "https://i.postimg.cc/f3bNwk7Y/Store-sales-proof.jpg",
+    title: "Home & Living Performance",
+    subtitle: "Consistent growth metrics",
   },
 ];
 
@@ -32,7 +25,7 @@ export default function AnalyticsProof() {
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
 
-      <div className="container-custom relative">
+      <div className="container-custom relative px-4 md:px-6 lg:px-8">
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-16">
             <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Real Results</p>
@@ -45,79 +38,34 @@ export default function AnalyticsProof() {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {analyticsData.map((data, index) => (
-            <ScrollReveal key={data.store} animation="slide-left" delay={index * 150}>
-              <div className="glass-card-hover p-6 group">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="font-semibold text-foreground">{data.store}</h3>
-                  <div className="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-sm font-bold">
-                    {data.growth}
+        <div className="grid md:grid-cols-3 gap-8">
+          {analyticsImages.map((data, index) => (
+            <ScrollReveal key={data.title} animation="fade-up" delay={index * 150}>
+              <div className="glass-card-hover p-4 group">
+                {/* Phone Frame */}
+                <div className="relative rounded-2xl overflow-hidden bg-muted/30">
+                  {/* Phone Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-background rounded-b-2xl z-10 flex items-center justify-center">
+                    <div className="w-12 h-2 bg-muted rounded-full" />
                   </div>
+                  
+                  {/* Image */}
+                  <div className="aspect-[9/16] overflow-hidden">
+                    <img
+                      src={data.image}
+                      alt={data.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  
+                  {/* Glow overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
-                {/* Mini Chart */}
-                <div className="h-16 mb-6 relative overflow-hidden rounded-lg bg-muted/30">
-                  <svg className="w-full h-full" viewBox="0 0 200 60" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M0 50 Q 25 40, 50 45 T 100 35 T 150 25 T 200 15 L 200 60 L 0 60 Z"
-                      fill={`url(#gradient-${index})`}
-                    />
-                    <path
-                      d="M0 50 Q 25 40, 50 45 T 100 35 T 150 25 T 200 15"
-                      fill="none"
-                      stroke="hsl(var(--primary))"
-                      strokeWidth="2"
-                      className="group-hover:stroke-accent transition-colors duration-300"
-                    />
-                  </svg>
-                </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <DollarSign className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Total Sales</p>
-                      <p className="font-bold text-foreground">{data.totalSales}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <ShoppingCart className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Orders</p>
-                      <p className="font-bold text-foreground">{data.orders}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Percent className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Conversion</p>
-                      <p className="font-bold text-foreground">{data.conversion}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                      <TrendingUp className="w-5 h-5 text-green-400" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Growth</p>
-                      <p className="font-bold text-green-400">{data.growth}</p>
-                    </div>
-                  </div>
+                {/* Caption */}
+                <div className="mt-4 text-center">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">{data.title}</h3>
+                  <p className="text-muted-foreground text-sm">{data.subtitle}</p>
                 </div>
               </div>
             </ScrollReveal>

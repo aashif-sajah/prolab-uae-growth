@@ -54,7 +54,7 @@ export default function Contact() {
         <section className="pt-32 pb-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
-          <div className="container-custom relative">
+          <div className="container-custom relative px-4 md:px-6 lg:px-8">
             <ScrollReveal animation="fade-up">
               <div className="text-center max-w-4xl mx-auto">
                 <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground leading-tight mb-6">
@@ -70,7 +70,7 @@ export default function Contact() {
 
         {/* Contact Section */}
         <section className="section-padding">
-          <div className="container-custom">
+          <div className="container-custom px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Form */}
               <ScrollReveal animation="slide-left">
@@ -164,7 +164,7 @@ export default function Contact() {
 
                   <div className="space-y-6">
                     <a
-                      href="https://wa.me/94726602908"
+                      href="https://wa.me/971507123574"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-start gap-4 glass-card-hover p-6 group"
@@ -174,7 +174,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
-                        <p className="text-muted-foreground">+94 726 602 908</p>
+                        <p className="text-muted-foreground">+971 50 712 3574</p>
                         <p className="text-sm text-green-500 mt-1">Fastest response</p>
                       </div>
                     </a>

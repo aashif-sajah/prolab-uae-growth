@@ -20,7 +20,7 @@ export default function CTASection({
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
 
-      <div className="container-custom relative">
+      <div className="container-custom relative px-4 md:px-6 lg:px-8">
         <ScrollReveal animation="fade-up">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
@@ -36,7 +36,7 @@ export default function CTASection({
                 </Button>
               </Link>
               <a
-                href="https://wa.me/94726602908"
+                href="https://wa.me/971507123574"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -29,15 +29,16 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-secondary/50 border-t border-border/50">
-      <div className="container-custom section-padding pb-8">
+      <div className="container-custom section-padding px-4 md:px-6 lg:px-8 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center">
-                <span className="font-display font-bold text-primary-foreground text-lg">P</span>
-              </div>
-              <span className="font-display font-bold text-2xl text-foreground">PROLAB</span>
+              <img
+                src="https://i.postimg.cc/YqFGfHqV/PRO-LAB-(1).png"
+                alt="PROLAB"
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground leading-relaxed">
               Dubai's trusted Shopify development partner. We build revenue-ready stores that actually make money. 100% legitimate, Dubai-registered company.
@@ -100,13 +101,13 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="https://wa.me/94726602908"
+                  href="https://wa.me/971507123574"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <MessageCircle className="w-5 h-5 text-primary" />
-                  <span>+94 726 602 908</span>
+                  <span>+971 50 712 3574</span>
                 </a>
               </li>
               <li>
@@ -125,7 +126,7 @@ export default function Footer() {
             </ul>
             <div className="mt-6">
               <a
-                href="https://wa.me/94726602908"
+                href="https://wa.me/971507123574"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-medium transition-all duration-300"
