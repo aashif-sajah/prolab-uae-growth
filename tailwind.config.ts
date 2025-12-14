@@ -118,6 +118,18 @@ export default {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "pulse-logo": {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.05)", opacity: "0.85" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        spin: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -131,6 +143,9 @@ export default {
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
         glow: "glow 3s ease-in-out infinite",
         "count-up": "count-up 0.5s ease-out forwards",
+        "pulse-logo": "pulse-logo 1.5s ease-in-out infinite",
+        marquee: "marquee 30s linear infinite",
+        "spin-slow": "spin 60s linear infinite",
       },
       backgroundImage: {
         "gradient-gold": "linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(35 70% 50%) 100%)",

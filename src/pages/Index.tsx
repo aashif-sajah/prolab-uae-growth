@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TrustBadges from "@/components/TrustBadges";
-import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import ServiceCard from "@/components/ServiceCard";
 import PricingCard from "@/components/PricingCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import AnalyticsProof from "@/components/AnalyticsProof";
+import PartnerBrands from "@/components/PartnerBrands";
 import CTASection from "@/components/CTASection";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Helmet } from "react-helmet-async";
@@ -134,66 +134,73 @@ export default function HomePage() {
       <Header />
 
       <main>
-        {/* Hero Section */}
+        {/* Hero Section - Clean & CTA Focused */}
         <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
-          {/* Background Effects */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-          <div className="absolute top-1/4 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          {/* Abstract Background Illustrations */}
+          <div className="absolute inset-0">
+            {/* Large Gold Orb */}
+            <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-full blur-3xl animate-pulse-slow translate-x-1/4" />
+            {/* Cyan Orb */}
+            <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-accent/20 via-accent/5 to-transparent rounded-full blur-3xl animate-pulse-slow animation-delay-500 -translate-x-1/4" />
+            {/* Small floating orbs */}
+            <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-float" />
+            <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-accent/20 rounded-full blur-2xl animate-float animation-delay-300" />
+            {/* Geometric lines */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10">
+              <svg viewBox="0 0 800 800" className="w-full h-full">
+                <circle cx="400" cy="400" r="300" fill="none" stroke="hsl(var(--primary))" strokeWidth="1" strokeDasharray="10 20" className="animate-spin-slow" style={{ animationDuration: "60s" }} />
+                <circle cx="400" cy="400" r="350" fill="none" stroke="hsl(var(--accent))" strokeWidth="1" strokeDasharray="5 15" className="animate-spin-slow" style={{ animationDuration: "45s", animationDirection: "reverse" }} />
+              </svg>
+            </div>
+          </div>
 
-          <div className="container-custom relative py-20">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Content */}
-              <div className="order-2 lg:order-1">
-                <ScrollReveal animation="fade-up">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-primary text-sm font-medium">Dubai's #1 Shopify Partner</span>
-                  </div>
-                </ScrollReveal>
+          <div className="container-custom relative py-20 px-4 md:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <ScrollReveal animation="fade-up">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-primary text-sm font-medium">Dubai's #1 Shopify Partner</span>
+                </div>
+              </ScrollReveal>
 
-                <ScrollReveal animation="fade-up" delay={100}>
-                  <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-                    We Build Shopify Stores That{" "}
-                    <span className="text-gradient-gold">Actually Make Money</span>
-                  </h1>
-                </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={100}>
+                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
+                  We Build Shopify Stores That{" "}
+                  <span className="text-gradient-gold">Actually Make Money</span>
+                </h1>
+              </ScrollReveal>
 
-                <ScrollReveal animation="fade-up" delay={200}>
-                  <p className="text-xl text-muted-foreground mb-8 max-w-xl">
-                    Dubai-based Shopify experts delivering revenue-ready stores in just{" "}
-                    <span className="text-primary font-semibold">3 days</span>. 
-                    Your store should make money — not just exist.
-                  </p>
-                </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={200}>
+                <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+                  Dubai-based Shopify experts delivering revenue-ready stores in just{" "}
+                  <span className="text-primary font-semibold">3 days</span>. 
+                  Your store should make money — not just exist.
+                </p>
+              </ScrollReveal>
 
-                <ScrollReveal animation="fade-up" delay={300}>
-                  <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                    <Link to="/shopify">
-                      <Button className="btn-primary text-lg px-8 py-6 gap-2 w-full sm:w-auto">
-                        Get Your Store in 3 Days
-                        <ArrowRight className="w-5 h-5" />
-                      </Button>
-                    </Link>
-                    <Link to="/contact">
-                      <Button variant="outline" className="btn-secondary text-lg px-8 py-6 w-full sm:w-auto">
-                        Talk to Our Expert
-                      </Button>
-                    </Link>
-                  </div>
-                </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={300}>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                  <Link to="/contact">
+                    <Button className="btn-primary text-lg px-10 py-7 gap-2 w-full sm:w-auto">
+                      Get Your Store in 3 Days
+                      <ArrowRight className="w-5 h-5" />
+                    </Button>
+                  </Link>
+                  <a
+                    href="https://wa.me/971507123574"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline" className="btn-secondary text-lg px-10 py-7 w-full sm:w-auto border-green-500/50 text-green-400 hover:bg-green-500/10">
+                      Talk to Our Expert
+                    </Button>
+                  </a>
+                </div>
+              </ScrollReveal>
 
-                <ScrollReveal animation="fade-up" delay={400}>
-                  <TrustBadges />
-                </ScrollReveal>
-              </div>
-
-              {/* Analytics Dashboard */}
-              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <ScrollReveal animation="slide-right" delay={500}>
-                  <AnalyticsDashboard />
-                </ScrollReveal>
-              </div>
+              <ScrollReveal animation="fade-up" delay={400}>
+                <TrustBadges />
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -204,9 +211,12 @@ export default function HomePage() {
         {/* Stats Section */}
         <StatsSection />
 
+        {/* Partner Brands Section */}
+        <PartnerBrands />
+
         {/* Services Section */}
         <section className="section-padding" id="services">
-          <div className="container-custom">
+          <div className="container-custom px-4 md:px-6 lg:px-8">
             <ScrollReveal animation="fade-up">
               <div className="text-center mb-16">
                 <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Our Services</p>
@@ -231,7 +241,7 @@ export default function HomePage() {
 
         {/* Why Prolab Section */}
         <section className="section-padding bg-secondary/30">
-          <div className="container-custom">
+          <div className="container-custom px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal animation="slide-left">
                 <div>
@@ -250,8 +260,8 @@ export default function HomePage() {
                       { icon: Zap, title: "Conversion Focused", desc: "Every element designed to convert visitors" },
                       { icon: Smartphone, title: "Mobile-First", desc: "70% of traffic is mobile — we optimize for it" },
                     ].map((item, index) => (
-                      <div key={item.title} className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <div key={item.title} className="flex items-start gap-4 group">
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                           <item.icon className="w-6 h-6 text-primary" />
                         </div>
                         <div>
@@ -304,7 +314,7 @@ export default function HomePage() {
 
         {/* Packages Preview */}
         <section className="section-padding" id="pricing">
-          <div className="container-custom">
+          <div className="container-custom px-4 md:px-6 lg:px-8">
             <ScrollReveal animation="fade-up">
               <div className="text-center mb-16">
                 <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Pricing</p>
@@ -338,7 +348,7 @@ export default function HomePage() {
 
         {/* Testimonials */}
         <section className="section-padding bg-secondary/30">
-          <div className="container-custom">
+          <div className="container-custom px-4 md:px-6 lg:px-8">
             <ScrollReveal animation="fade-up">
               <div className="text-center mb-16">
                 <p className="text-primary font-semibold mb-4 tracking-wide uppercase">Client Reviews</p>

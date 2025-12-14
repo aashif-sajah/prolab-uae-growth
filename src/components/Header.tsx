@@ -38,16 +38,15 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-custom">
+      <div className="container-custom px-4 md:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-lg">P</span>
-            </div>
-            <span className="font-display font-bold text-2xl text-foreground group-hover:text-primary transition-colors">
-              PROLAB
-            </span>
+            <img
+              src="https://i.postimg.cc/YqFGfHqV/PRO-LAB-(1).png"
+              alt="PROLAB"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,7 +69,7 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://wa.me/94726602908"
+              href="https://wa.me/971507123574"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -98,7 +97,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 animate-fade-in">
-            <div className="container-custom py-6 flex flex-col gap-2">
+            <div className="container-custom py-6 px-4 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -114,7 +113,7 @@ export default function Header() {
               ))}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
                 <a
-                  href="https://wa.me/94726602908"
+                  href="https://wa.me/971507123574"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full"
