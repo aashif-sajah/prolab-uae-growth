@@ -23,17 +23,17 @@ export default function PricingCard({
     <div
       className={`relative glass-card p-8 flex flex-col h-full transition-all duration-500 hover:scale-105 ${
         featured
-          ? "border-primary/50 shadow-gold bg-gradient-to-b from-primary/5 to-transparent"
+          ? "border-primary/50 shadow-gold bg-gradient-to-b from-primary/5 to-transparent mt-8 md:mt-0"
           : "hover:border-primary/30"
       }`}
     >
       {featured && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-gold text-primary-foreground text-sm font-bold rounded-full shadow-gold">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-gold text-primary-foreground text-xs md:text-sm font-bold rounded-full shadow-gold whitespace-nowrap">
           Most Popular
         </div>
       )}
 
-      <div className="mb-8">
+      <div className={`mb-8 ${featured ? "pt-2" : ""}`}>
         <h3 className="font-display font-bold text-2xl text-foreground mb-2">{name}</h3>
         <p className="text-muted-foreground text-sm mb-4">{description}</p>
         <div className="flex items-baseline gap-1">

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import { Mail, Phone, MapPin, MessageCircle, Send, Clock, Shield, CheckCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Send, CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,6 +12,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Contact() {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -23,16 +25,29 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.sendForm(
+        "service_ufefgyj",
+        "template_oariocl",
+        formRef.current!,
+        { publicKey: "HNSfnvqCW3nqaet54" }
+      );
 
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
 
-    setFormData({ name: "", email: "", whatsapp: "", message: "" });
-    setIsSubmitting(false);
+      setFormData({ name: "", email: "", whatsapp: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Failed to send",
+        description: "Please try again or contact us via WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -71,15 +86,15 @@ export default function Contact() {
         {/* Contact Section */}
         <section className="section-padding">
           <div className="container-custom px-4 md:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-16 items-stretch">
               {/* Contact Form */}
               <ScrollReveal animation="slide-left">
-                <div className="glass-card p-8">
+                <div className="glass-card p-8 h-full flex flex-col">
                   <h2 className="font-display text-2xl font-bold text-foreground mb-6">
                     Book a Free Consultation
                   </h2>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Your Name
@@ -123,7 +138,7 @@ export default function Contact() {
                       />
                     </div>
 
-                    <div>
+                    <div className="flex-1">
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Tell us about your project
                       </label>
@@ -134,14 +149,14 @@ export default function Contact() {
                         placeholder="I want to start a Shopify store for..."
                         rows={4}
                         required
-                        className="bg-secondary/50 border-border resize-none"
+                        className="bg-secondary/50 border-border resize-none h-full min-h-[120px]"
                       />
                     </div>
 
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full btn-primary py-6 gap-2"
+                      className="w-full btn-primary py-6 gap-2 mt-auto"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                       <Send className="w-5 h-5" />
@@ -152,17 +167,17 @@ export default function Contact() {
 
               {/* Contact Info */}
               <ScrollReveal animation="slide-right" delay={200}>
-                <div className="space-y-8">
-                  <div>
+                <div className="h-full flex flex-col">
+                  <div className="mb-8">
                     <h2 className="font-display text-2xl font-bold text-foreground mb-6">
                       Get in Touch
                     </h2>
-                    <p className="text-muted-foreground mb-8">
+                    <p className="text-muted-foreground">
                       Have questions? We're here to help. Reach out through any of these channels and we'll respond within hours.
                     </p>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="space-y-6 flex-1">
                     <a
                       href="https://wa.me/971507123574"
                       target="_blank"
@@ -206,7 +221,7 @@ export default function Contact() {
                   </div>
 
                   {/* Trust Signals */}
-                  <div className="glass-card p-6">
+                  <div className="glass-card p-6 mt-6">
                     <h3 className="font-semibold text-foreground mb-4">Why Contact Us?</h3>
                     <ul className="space-y-3">
                       {[

@@ -42,24 +42,19 @@ export default function AnalyticsProof() {
           {analyticsImages.map((data, index) => (
             <ScrollReveal key={data.title} animation="fade-up" delay={index * 150}>
               <div className="glass-card-hover p-4 group">
-                {/* Phone Frame */}
-                <div className="relative rounded-2xl overflow-hidden bg-muted/30">
-                  {/* Phone Notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-background rounded-b-2xl z-10 flex items-center justify-center">
-                    <div className="w-12 h-2 bg-muted rounded-full" />
-                  </div>
-                  
+                {/* Image Container - Clean without phone notch */}
+                <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/30">
                   {/* Image */}
-                  <div className="aspect-[9/16] overflow-hidden">
+                  <div className="aspect-[4/5] overflow-hidden">
                     <img
                       src={data.image}
                       alt={data.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-contain bg-background transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                   
                   {/* Glow overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Caption */}

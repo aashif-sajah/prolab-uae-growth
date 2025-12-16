@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -41,48 +41,44 @@ export default function Header() {
       <div className="container-custom px-4 md:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
             <img
-              src="https://i.postimg.cc/YqFGfHqV/PRO-LAB-(1).png"
+              src="https://i.postimg.cc/fThtCRqg/PRO-LAB-1-removebg-preview.png"
               alt="PROLAB"
               className="h-10 w-auto"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  location.pathname === link.path
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
+            <div className="flex items-center gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                    location.pathname === link.path
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* CTA Button - Single WhatsApp Button */}
+          <div className="hidden lg:flex items-center flex-shrink-0">
             <a
               href="https://wa.me/971507123574"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="sm" className="gap-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground">
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp Us
-              </Button>
-            </a>
-            <Link to="/contact">
               <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90">
                 Free Consultation
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -111,23 +107,17 @@ export default function Header() {
                   {link.name}
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
+              <div className="mt-4 pt-4 border-t border-border">
                 <a
                   href="https://wa.me/971507123574"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-                  <Button variant="outline" className="w-full gap-2 border-primary/50 text-primary">
-                    <MessageCircle className="w-4 h-4" />
-                    WhatsApp Us
-                  </Button>
-                </a>
-                <Link to="/contact" className="w-full">
                   <Button className="w-full bg-gradient-gold text-primary-foreground">
                     Free Consultation
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
