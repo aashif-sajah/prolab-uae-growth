@@ -17,11 +17,11 @@ const badges = [
     title: "24/7 Support",
     description: "Always Here for You",
   },
-  {
+  /* {
     icon: CheckCircle2,
     title: "100% Original",
     description: "No Templates, No Shortcuts",
-  },
+  }, */
 ];
 
 export default function TrustBadges() {
