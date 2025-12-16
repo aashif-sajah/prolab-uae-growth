@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, MessageCircle, Instagram, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Instagram, Linkedin, Twitter, Facebook } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", path: "/" },
@@ -11,12 +11,12 @@ const quickLinks = [
 ];
 
 const services = [
-  { name: "Shopify Store Setup", path: "/shopify" },
-  { name: "Payment Gateway Integration", path: "/shopify" },
-  { name: "Product Research", path: "/shopify" },
-  { name: "Business Websites", path: "/websites" },
-  { name: "Personal Brands", path: "/websites" },
-  { name: "SEO Optimization", path: "/shopify" },
+  { name: "Shopify Store Setup", path: "/services/shopify-setup" },
+  { name: "Payment Gateway Integration", path: "/services/payment-gateway" },
+  { name: "Product Research", path: "/services/product-research" },
+  { name: "Business Websites", path: "/services/business-websites" },
+  { name: "Personal Brands", path: "/services/personal-brands" },
+  { name: "SEO Optimization", path: "/services/seo-optimization" },
 ];
 
 const socialLinks = [
@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src="https://i.postimg.cc/YqFGfHqV/PRO-LAB-(1).png"
+                src="https://i.postimg.cc/fThtCRqg/PRO-LAB-1-removebg-preview.png"
                 alt="PROLAB"
                 className="h-12 w-auto"
               />
