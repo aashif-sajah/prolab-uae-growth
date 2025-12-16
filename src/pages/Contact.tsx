@@ -149,14 +149,14 @@ export default function Contact() {
                         placeholder="I want to start a Shopify store for..."
                         rows={4}
                         required
-                        className="bg-secondary/50 border-border resize-none h-full min-h-[120px]"
+                        className="bg-secondary/50 border-border resize-none h-full max-h-[305px] min-h-[120px] "
                       />
                     </div>
 
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full btn-primary py-6 gap-2 mt-auto"
+                      className="mt-10 w-full btn-primary py-6 gap-2"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                       <Send className="w-5 h-5" />
