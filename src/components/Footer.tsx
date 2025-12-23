@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, MessageCircle, Instagram, Linkedin, Twitter, Facebook } from "lucide-react";
+import prolabLogo from "@/assets/prolab-logo.jpeg";
 
 const quickLinks = [
   { name: "Home", path: "/" },
@@ -35,7 +36,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src="https://i.postimg.cc/fThtCRqg/PRO-LAB-1-removebg-preview.png"
+                src={prolabLogo}
                 alt="PROLAB"
                 className="h-12 w-auto"
               />
