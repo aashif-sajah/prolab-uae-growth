@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import prolabLogo from "@/assets/prolab-logo.jpeg";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -43,7 +44,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
             <img
-              src="https://i.postimg.cc/fThtCRqg/PRO-LAB-1-removebg-preview.png"
+              src={prolabLogo}
               alt="PROLAB"
               className="h-10 w-auto"
             />
