@@ -144,7 +144,7 @@ export default {
         glow: "glow 3s ease-in-out infinite",
         "count-up": "count-up 0.5s ease-out forwards",
         "pulse-logo": "pulse-logo 1.5s ease-in-out infinite",
-        marquee: "marquee 15s linear infinite",
+        marquee: "marquee 30s linear infinite",
         "spin-slow": "spin 60s linear infinite",
       },
       backgroundImage: {

@@ -1,8 +1,8 @@
 import ScrollReveal from "./ScrollReveal";
 
 const baseLogos = [
-  { logo: "/trusted_brands/eduraiselogo.png", name: "Eduraise" },
-  { logo: "/trusted_brands/estaielogo.svg", name: "Estaie" },
+  { logo: "/trusted_brands/eduraise", name: "Company A" },
+  { logo: "/trusted_brands/logo2.png", name: "Company B" },
 ];
 
 // This creates an array of 10 items (5 pairs of your logos)
@@ -25,8 +25,8 @@ export default function PartnerBrands() {
       {/* Marquee Container */}
       <div className="relative">
         {/* Gradient overlays for fade effect */}
-        {/* <div className="absolute left-10 top-0 bottom-0 w-32 bg-gradient-to-r from-secondary/20 to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-secondary/20 to-transparent z-10" /> */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-secondary/20 to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-secondary/20 to-transparent z-10" />
 
         {/* Scrolling track */}
         <div className="flex animate-marquee">
@@ -34,14 +34,13 @@ export default function PartnerBrands() {
           {partners.map((partner, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 mx-4 md:mx-6 transition-all duration-300 hover:scale-110 group"
+              className="flex-shrink-0 mx-8 md:mx-12 transition-all duration-300 hover:scale-110 group"
             >
-              <div className="p-6 md:p-8 rounded-2xl group-hover:border-primary/30 transition-all duration-300">
-                {/* glass-card */}
+              <div className="glass-card p-6 md:p-8 rounded-2xl group-hover:border-primary/30 transition-all duration-300">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-8 md:h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="h-12 md:h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
               </div>
             </div>

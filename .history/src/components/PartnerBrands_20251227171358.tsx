@@ -34,11 +34,10 @@ export default function PartnerBrands() {
           {partners.map((partner, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 mx-4 md:mx-6 transition-all duration-300 hover:scale-110 group"
+              className="flex-shrink-0 mx-8 md:mx-12 transition-all duration-300 hover:scale-110 group"
             >
               <div className="p-6 md:p-8 rounded-2xl group-hover:border-primary/30 transition-all duration-300">
-                {/* glass-card */}
-                <img
+                img
                   src={partner.logo}
                   alt={partner.name}
                   className="h-8 md:h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
