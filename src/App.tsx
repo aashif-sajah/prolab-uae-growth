@@ -10,6 +10,7 @@ import ShopifyDevelopment from "./pages/ShopifyDevelopment";
 import Websites from "./pages/Websites";
 import Pricing from "./pages/Pricing";
 import Portfolio from "./pages/Portfolio";
+import Eduraise from "./pages/portfolio/Eduraise";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/websites" element={<Websites />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/eduraise" element={<Eduraise />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
