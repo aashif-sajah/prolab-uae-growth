@@ -12,6 +12,7 @@ import AnalyticsProof from "@/components/AnalyticsProof";
 import PartnerBrands from "@/components/PartnerBrands";
 import CTASection from "@/components/CTASection";
 import ScrollReveal from "@/components/ScrollReveal";
+import HomepagePortfolio from "@/components/portfolio/HomepagePortfolio";
 import { Helmet } from "react-helmet-async";
 
 const services = [
@@ -125,9 +126,9 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>PROLAB - Dubai's #1 Shopify Development Agency | Store in 3 Days</title>
-        <meta name="description" content="Dubai's trusted Shopify development partner. Get your revenue-ready store in just 3 days. 100+ stores built, 24/7 support, Dubai registered company. Start selling today!" />
-        <meta name="keywords" content="Shopify development Dubai, Shopify store UAE, web development Dubai, Shopify experts UAE, Dubai Shopify agency" />
+        <title>PROLAB - Dubai's #1 Web Development Agency | Websites & Shopify Stores</title>
+        <meta name="description" content="Dubai's trusted web development partner. Custom portfolio websites & revenue-ready Shopify stores. 100+ projects delivered, 24/7 support, Dubai registered company." />
+        <meta name="keywords" content="web development Dubai, portfolio website developer Dubai, Shopify store UAE, business website Dubai, UI UX agency Dubai" />
         <link rel="canonical" href="https://prolab.ae/" />
       </Helmet>
 
@@ -159,22 +160,22 @@ export default function HomePage() {
               <ScrollReveal animation="fade-up">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-primary text-sm font-medium">Dubai's #1 Shopify Partner</span>
+                  <span className="text-primary text-sm font-medium">Dubai's #1 Web Development Partner</span>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal animation="fade-up" delay={100}>
                 <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-                  We Build Shopify Stores That{" "}
+                  We Build Websites & Stores That{" "}
                   <span className="text-gradient-gold">Actually Make Money</span>
                 </h1>
               </ScrollReveal>
 
               <ScrollReveal animation="fade-up" delay={200}>
                 <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-                  Dubai-based Shopify experts delivering revenue-ready stores in just{" "}
-                  <span className="text-primary font-semibold">3 days</span>. 
-                  Your store should make money — not just exist.
+                  Dubai-based web experts delivering custom portfolio websites & revenue-ready{" "}
+                  <span className="text-primary font-semibold">Shopify stores</span>. 
+                  Your online presence should make money — not just exist.
                 </p>
               </ScrollReveal>
 
@@ -182,7 +183,7 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                   <Link to="/contact">
                     <Button className="btn-primary text-lg px-10 py-7 gap-2 w-full sm:w-auto">
-                      Get Your Store in 3 Days
+                      Start Your Project Today
                       <ArrowRight className="w-5 h-5" />
                     </Button>
                   </Link>
@@ -213,6 +214,9 @@ export default function HomePage() {
 
         {/* Partner Brands Section */}
         <PartnerBrands />
+
+        {/* Homepage Portfolio Section */}
+        <HomepagePortfolio />
 
         {/* Services Section */}
         <section className="section-padding" id="services">
